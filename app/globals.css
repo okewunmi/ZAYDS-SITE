@@ -1,0 +1,10 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{@apply font-body text-ink bg-white antialiased}
+h1,h2,h3{@apply font-display font-semibold tracking-tight text-forest}
+.btn{@apply inline-block px-6 py-3 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2}
+.btn-gold{@apply bg-gold text-white hover:bg-[#6f562d]}
+.btn-line{@apply border border-white/60 text-white hover:bg-white hover:text-forest}
+.inp{@apply w-full border border-stone-300 px-3 py-2 bg-white focus:border-forest outline-none}
+@keyframes trace{to{stroke-dashoffset:0}}
+.trace path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:trace 3.2s ease-out forwards}
+@media(prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}}
