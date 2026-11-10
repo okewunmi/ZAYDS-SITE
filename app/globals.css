@@ -1,15 +1,70 @@
-@tailwind base;@tailwind components;@tailwind utilities;
-html{scroll-behavior:smooth}
-body{@apply font-body text-ink bg-white antialiased leading-[1.75]}
-h1,h2,h3,h4{@apply font-display font-semibold text-forest leading-[1.2]}
-.wrap{@apply max-w-6xl mx-auto px-5 sm:px-8}
-.sec{@apply py-20 md:py-28}
-.eyebrow{@apply text-xs font-semibold tracking-[0.22em] uppercase text-gold}
-.btn{@apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2}
-.btn-gold{@apply bg-gold text-white hover:bg-[#6f562d]}
-.btn-dark{@apply bg-forest text-white hover:bg-[#252e22]}
-.btn-line{@apply border border-white/50 text-white hover:bg-white hover:text-forest}
-.inp{@apply w-full border border-stone-300 px-4 py-3 bg-white focus:border-forest outline-none}
-@keyframes trace{to{stroke-dashoffset:0}}
-.trace path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:trace 3.2s ease-out forwards}
-@media(prefers-reduced-motion:reduce){.trace path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    @apply font-body text-ink bg-white antialiased leading-[1.75]
+}
+
+h1, h2, h3, h4 {
+    @apply font-display font-semibold text-forest leading-[1.2]
+}
+
+.wrap {
+    @apply max-w-6xl mx-auto px-5 sm:px-8
+}
+
+.sec {
+    @apply py-20 md:py-28
+}
+
+.eyebrow {
+    @apply text-xs font-semibold tracking-[0.22em] uppercase text-gold
+}
+
+.btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+}
+
+.btn-gold {
+    @apply bg-gold text-white hover:bg-[#6f562d]
+}
+
+.btn-dark {
+    @apply bg-forest text-white hover:bg-[#252e22]
+}
+
+.btn-line {
+    @apply border border-white/50 text-white hover:bg-white hover:text-forest
+}
+
+.inp {
+    @apply w-full border border-stone-300 px-4 py-3 bg-white focus:border-forest outline-none
+}
+
+@keyframes trace {
+    to {
+        stroke-dashoffset: 0
+    }
+}
+
+.trace path {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: trace 3.2s ease-out forwards
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .trace path {
+        animation: none;
+        stroke-dashoffset: 0
+    }
+
+    html {
+        scroll-behavior: auto
+    }
+}
