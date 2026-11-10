@@ -1,8 +1,10 @@
 import SubmitForm from '@/components/SubmitForm'
+import PageHeader from '@/components/PageHeader'
 import {fetchRows} from '@/lib/supabase'
 export const revalidate=60
 export const metadata={title:'Careers',description:'Engineering jobs and internships at ZAYDS Engineering Consulting, Lagos.'}
 export default async function C(){const jobs=await fetchRows('jobs')
-return <main className="max-w-6xl mx-auto px-5 py-14 grid md:grid-cols-2 gap-12"><div><h1 className="text-5xl">Careers</h1><p className="mt-3">Join a multidisciplinary team building reliable, sustainable engineering solutions.</p>
-{jobs.length?jobs.map(j=><div key={j.id} className="mt-6 border-l-4 border-gold pl-4"><h2 className="text-2xl">{j.title}</h2><p className="text-sm text-stone-500">{[j.type,j.location].filter(Boolean).join(' · ')}</p><p className="mt-1 whitespace-pre-line">{j.description}</p></div>):<p className="mt-6 text-stone-500">No open roles right now. Send a general application or internship request.</p>}</div>
-<div><h2 className="text-3xl mb-4">Apply</h2><SubmitForm type="application" jobs={jobs}/></div></main>}
+return <main><PageHeader eyebrow="Careers" title="Build your career with us" intro="Join a multidisciplinary team delivering reliable, sustainable engineering solutions."/>
+<section className="sec"><div className="wrap grid lg:grid-cols-2 gap-16"><div><h2 className="text-3xl">Open positions</h2>
+{jobs.length?<div className="mt-8 space-y-6">{jobs.map(j=><div key={j.id} className="border border-stone-200 p-7"><h3 className="text-xl">{j.title}</h3><p className="mt-1 text-sm text-gold">{[j.type,j.location].filter(Boolean).join(' · ')}</p><p className="mt-3 text-sm text-stone-600 whitespace-pre-line">{j.description}</p></div>)}</div>:<p className="mt-6 text-stone-500">No open roles right now. Send a general application or internship request.</p>}</div>
+<div className="border border-stone-200 p-8 md:p-10 self-start"><h2 className="text-3xl mb-6">Apply</h2><SubmitForm type="application" jobs={jobs}/></div></div></section></main>}

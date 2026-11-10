@@ -1,0 +1,1 @@
+export default function Head({eyebrow,title,intro,center,light}){return <div className={`max-w-2xl ${center?'text-center mx-auto':''}`}><p className={`eyebrow ${light?'!text-tan':''}`}>{eyebrow}</p><h2 className={`mt-4 text-3xl md:text-4xl ${light?'!text-white':''}`}>{title}</h2>{intro&&<p className={`mt-5 text-lg ${light?'text-white/75':'text-stone-600'}`}>{intro}</p>}</div>}

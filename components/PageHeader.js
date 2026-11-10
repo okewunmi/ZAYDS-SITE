@@ -1,0 +1,2 @@
+import Link from 'next/link'
+export default function PageHeader({eyebrow,title,intro}){return <section className="bg-cream border-b border-stone-200"><div className="wrap py-14 md:py-20"><p className="eyebrow"><Link href="/" className="hover:underline">Home</Link> <span className="mx-1">/</span> {eyebrow}</p><h1 className="mt-4 text-4xl md:text-5xl max-w-3xl">{title}</h1>{intro&&<p className="mt-5 max-w-2xl text-lg text-stone-600">{intro}</p>}</div></section>}
